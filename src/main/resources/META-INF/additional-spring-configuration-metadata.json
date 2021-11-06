@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "spring",
+      "type": "java.lang.String",
+      "description": "Description for spring."
+    },
+    {
+      "name": "properties",
+      "type": "java.lang.String",
+      "description": "Description for properties."
+    },
+    {
+      "name": "liquibase.change-log",
+      "type": "java.lang.String",
+      "description": "Description for liquibase.change-log."
+    }
+  ] }

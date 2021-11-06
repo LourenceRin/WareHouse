@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:1234/wh_db"
+    username: "postgres"
+    password: "733123"
+
+liquibase:
+    change-log: "classpath:/db/changelog/db.changelog-master.yaml"
+    liquibase-schema: "liquibase"
+    enabled: true
+
+jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        show_sql: true

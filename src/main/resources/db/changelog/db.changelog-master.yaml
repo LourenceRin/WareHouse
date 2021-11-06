@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog.yaml
+  - changeSet:
+      id: 1
+      author: rbilyalov
+      comment: create table spentResource
+      changes:
+        - sqlFile:
+            path: db/changelog/sql/wh-1.sql
