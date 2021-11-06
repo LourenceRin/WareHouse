@@ -36,7 +36,14 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public UUID addProduct(CreateProductDto dto) {
-    return null;
+    Product product = new Product();
+    UUID uuid = UUID.randomUUID();
+    product.setId(uuid);
+    product.setName(dto.getName());
+    product.setProviderName(dto.getProviderName());
+    product.setUserName(dto.getUserName());
+    repository.save(product);
+    return uuid;
   }
 
   @Override

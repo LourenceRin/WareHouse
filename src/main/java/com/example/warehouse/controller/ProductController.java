@@ -8,15 +8,12 @@ import com.example.warehouse.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
 
-/** Контроллер для работы с подборками */
+/** Контроллер для работы с товаром */
 @RequiredArgsConstructor
 @RestController
 @Validated
@@ -32,7 +29,7 @@ public class ProductController {
 
     @Operation(summary = "Добавить продукт")
     @PostMapping("/product")
-    public UUID addProduct(@RequestParam CreateProductDto dto){
+    public UUID addProduct(@RequestBody CreateProductDto dto){
         return productService.addProduct(dto);
     }
 
