@@ -1,4 +1,4 @@
-# Document service
+# Warehouse service
 
 Сервис для работы с документами
 
