@@ -21,9 +21,6 @@ public class CreateProductDto {
     @Schema(description = "Наименование продукта", example = "Блок питания")
     private String name;
 
-    @Schema(description = "Тип продукта", example = "1/2/3")
-    private Integer type;
-
     @Schema(description = "Наименование поставщика", example = "random provider")
     private String providerName;
 

@@ -4,6 +4,7 @@ package com.example.warehouse.service.impl;
 import com.example.warehouse.entity.Product;
 import com.example.warehouse.exceptions.ProductNotFoundException;
 import com.example.warehouse.mapper.ProductMapper;
+import com.example.warehouse.model.CreateProductDto;
 import com.example.warehouse.model.ProductDto;
 import com.example.warehouse.repository.ProductRepository;
 import com.example.warehouse.service.ProductService;
@@ -12,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -25,8 +27,20 @@ public class ProductServiceImpl implements ProductService {
   @Override
   @Transactional
   public ProductDto getProduct(UUID uuid) throws ProductNotFoundException {
-    Product product = repository.findById(uuid).orElseThrow(() -> new ProductNotFoundException("Товара с таким uuid отсутствует"));
-
+    Product product =
+            repository
+            .findById(uuid)
+                    .orElseThrow(() -> new ProductNotFoundException("Товара с таким uuid не существует"));
     return productMapper.INSTANCE.toDto(product);
+  }
+
+  @Override
+  public UUID addProduct(CreateProductDto dto) {
+    return null;
+  }
+
+  @Override
+  public List<Product> getProducts() {
+    return repository.findAll();
   }
 }
